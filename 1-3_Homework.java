@@ -80,7 +80,27 @@ public class Main {
                 longWord = stringArray[i];
             }
         }
-        System.out.printf("Самое длинное слово: %s. Его длина: %d", longWord, maxLength);
+        // переменная count - служит счетчиком количества самых длинных слов, одинаковых по количеству символов
+        int count = 0;
+        // объявим массив, в который добавляются слова с одинаковым количеством символов
+        String[] biggestArray = new String[size];
+        for (int i = 0; i < stringArray.length; i++) {
+                if (stringArray[i].length() == maxLength) {
+                biggestArray[i] = stringArray[i];
+                count += 1;
+            }
+        }
+        if (count == 1) {
+            System.out.printf("Самое длинное слово: %s. Его длина: %d", longWord, maxLength);
+        } else if (count > 1) {
+            System.out.println("Самые длинные слова: ");
+            for (String element : biggestArray) {
+                if (element != null) {
+                    System.out.println(element);
+                }
+            }
+            System.out.println("Их длина составила: " + maxLength);
+        }
     }
 
     /**
