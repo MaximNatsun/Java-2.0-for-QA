@@ -6,8 +6,10 @@ public class Main {
         Random random = new Random();
 
         int[] myArray = new int[20];
+        System.out.println("Массив содержит цифры:");
         for (int i = 0; i < myArray.length; i++) {
             myArray[i] = (int) (Math.random() * 20 - 10);
+            System.out.println(myArray[i]);
         }
 
         // определение максимального отрицательного и минимального положительного элементов массива
