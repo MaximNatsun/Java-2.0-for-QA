@@ -9,7 +9,7 @@ public class Main {
         System.out.println("Массив содержит цифры:");
         for (int i = 0; i < myArray.length; i++) {
             myArray[i] = (int) (Math.random() * 20 - 10);
-            System.out.println(myArray[i]);
+            System.out.print(myArray[i] + " ");
         }
 
         // определение максимального отрицательного и минимального положительного элементов массива
@@ -23,13 +23,19 @@ public class Main {
                 min = myArray[i];
             }
         }
-        System.out.printf("Максимальный отрицательный элемент: %d. Минимально положительный элемент: %d", max, min);
+        System.out.printf("\nМаксимальный отрицательный элемент: %d. Минимально положительный элемент: %d", max, min);
 
-        // меняем местами через третью переменную
-        int temp;
-        temp = min;
-        min = max;
-        max = temp;
-        System.out.printf("\nПоменяли местами: \nМаксимальный отрицательный элемент: %d. Минимально положительный элемент: %d", max, min);
+        // заменяем значения переменных max и min в массиве myArray
+        for (int i = 0; i < myArray.length; i++) {
+             if (myArray[i] == max) {
+                 myArray[i] = min;
+             } else if (myArray[i] == min) {
+                 myArray[i] = max;
+             }
+        }
+        System.out.println("\nПоменяли местами. Теперь массив выглядит так:");
+        for (int i = 0; i < myArray.length; i++) {
+            System.out.print(myArray[i] + " ");
+        }
     }
 }
